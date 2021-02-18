@@ -5,12 +5,12 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
 
-    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'ENTER_STORAGE_ACCOUNT_NAME'
-    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'ENTER_BLOB_STORAGE_KEY'
-    BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'ENTER_IMAGES_CONTAINER_NAME'
+    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'cmsstorageaccountds1281'
+    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'T4wUtA6TQ0GnqAKaiZW8nvDW5AxJ08vQz6ozENZnlAY78Y9/L9YdJjL/2E3cFzw863t4V0wRSnMFLni7zA95EA=='
+    BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'cmsblob'
 
-    SQL_SERVER = os.environ.get('SQL_SERVER') or 'ENTER_SQL_SERVER_NAME.database.windows.net'
-    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'ENTER_SQL_DB_NAME'
+    SQL_SERVER = os.environ.get('SQL_SERVER') or 'cms-sqlsvr.database.windows.net'
+    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'cms-database'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'ENTER_SQL_SERVER_USERNAME'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'ENTER_SQL_SERVER_PASSWORD'
     # Below URI may need some adjustments for driver version, based on your OS, if running locally
