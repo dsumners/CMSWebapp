@@ -9,7 +9,7 @@ from config import Config
 from ArticleCMS import app, db
 from ArticleCMS.forms import LoginForm, PostForm
 from flask_login import current_user, login_user, logout_user, login_required
-from ArticleCMS.models import User, Post
+from FlaskWebProject.models import User, Post
 import msal
 import uuid
 
