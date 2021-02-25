@@ -12,9 +12,9 @@ import sys
 app = Flask(__name__)
 app.config.from_object(Config)
 # TODO: Add any logging levels and handlers with app.logger
-app.logger.setLevel(logging.INFO)
+app.logger.setLevel(logging.WARNING)
 streamHandler = logging.StreamHandler()
-streamHandler.setLevel(logging.INFO)
+streamHandler.setLevel(logging.WARNING)
 app.logger.addHandler(streamHandler)
 app.logger.info('App startup')
 
