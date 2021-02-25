@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_session import Session
 import sys
-import .header import header
+from .header import header
 
 app = Flask(__name__)
 app.config.from_object(Config)
