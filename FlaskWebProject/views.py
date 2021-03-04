@@ -10,8 +10,8 @@ from FlaskWebProject import app, db
 from FlaskWebProject.forms import LoginForm, PostForm
 from flask_login import current_user, login_user, logout_user, login_required
 from FlaskWebProject.models import User, Post
-import msal
 import uuid
+import msal
 import logging
 
 imageSourceUrl = 'https://'+ app.config['BLOB_ACCOUNT']  + '.blob.core.windows.net/' + app.config['BLOB_CONTAINER']  + '/'
@@ -72,7 +72,7 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
-        app.logger.info('Successful User Login')
+        app.logger.warning('Successful User Login')
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
@@ -109,9 +109,9 @@ def logout():
     logout_user()
     app.logger.warning('Successful User logout!')
     if session.get("user"): # Used MS Login
-        # Wipe out user and its token cache from session
+        # Wipe user and its token cache from session
         session.clear()
-        # Also logout from your tenant's web session
+        # Logout from your tenant web session
         return redirect(
             Config.AUTHORITY + "/oauth2/v2.0/logout" +
             "?post_logout_redirect_uri=" + url_for("login", _external=True))
