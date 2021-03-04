@@ -107,7 +107,7 @@ def authorized():
 @app.route('/logout')
 def logout():
     logout_user()
-    app.logger.warning('Successful User logout!')
+    app.logger.warning('Successful User logout!!')
     if session.get("user"): # Used MS Login
         # Wipe user and its token cache from session
         session.clear()
