@@ -14,7 +14,7 @@ app.config.from_object(Config)
 #SOURCE: Solution: Monitoring and Logging in Azure
 app.logger.setLevel(logging.INFO)
 streamHandler = logging.StreamHandler()
-streamHandler.setLevel(logging.INFO)
+streamHandler.setLevel(logging.ERROR)
 app.logger.addHandler(streamHandler)
 
 Session(app)
