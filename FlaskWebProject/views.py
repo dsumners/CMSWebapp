@@ -74,6 +74,7 @@ def login():
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             app.logger.warning('Successful User Login!!!')
+             flash('Successful logged in!!!') 
             next_page = url_for('home')
         return redirect(next_page)
     session["state"] = str(uuid.uuid4())
