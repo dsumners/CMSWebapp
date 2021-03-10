@@ -69,7 +69,7 @@ def login():
         if user is None or not user.check_password(form.password.data):
             app.logger.info('%s failed to log in, Invalid username or password', form.username.data)
             flash('Invalid username or password')
-            return redirect(url_for('login'))
+        return redirect(url_for('login'))
         app.logger.info('%s Successfully Logged In', user.username)
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
