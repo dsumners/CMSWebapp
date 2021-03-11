@@ -1,7 +1,6 @@
 """
 This script runs the FlaskWebProject application using a development server.
 """
-
 import logging
 from os import environ
 from FlaskWebProject import app
@@ -12,7 +11,6 @@ if __name__ != '__main__':
     app.logger.setLevel(gunicorn_logger.level)
 
 if __name__ == '__main__':
-    # app.debug = True
     HOST = environ.get('SERVER_HOST', 'localhost')
     try:
         PORT = int(environ.get('SERVER_PORT', '5555'))
