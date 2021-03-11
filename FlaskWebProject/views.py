@@ -62,7 +62,7 @@ def post(id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        app.logger.info('%s Successfully Logged In', user.username)
+        app.logger.info('Successfully Logged In')
         return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
